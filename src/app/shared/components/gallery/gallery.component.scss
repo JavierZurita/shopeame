@@ -1,0 +1,14 @@
+
+.galery{
+    list-style: none;
+    background-color: white;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    width: 70%;
+    border-radius: 10px;
+    &--item{
+        max-width: 200px;
+        margin-right: 20px;
+    }
+} 

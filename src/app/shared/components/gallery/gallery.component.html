@@ -1,0 +1,11 @@
+
+<div>
+    <div>
+       <h2>Lista de productos ({{products.length}})</h2> 
+    </div>
+    <ul class="galery">
+        <li *ngFor="let item of products" class="galery--item">
+            <app-card [item]="item"></app-card>
+        </li>
+    </ul>
+</div>
