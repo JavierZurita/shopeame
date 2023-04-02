@@ -1,3 +1,4 @@
+import { IProduct } from 'src/app/shared/interfaces/productInterface';
 import { ItemsServiceService } from './../../shared/services/items-service.service';
 import { Component, Input, OnInit } from '@angular/core';
 
@@ -7,7 +8,10 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./products.component.scss']
 })
 export class ProductsComponent implements OnInit{
-  @Input() products: any; //crear interfaz product
+
+  @Input() products: IProduct[] = [];
+  buscador: string = "";
+  vista: boolean = true;
   constructor(private itemsService: ItemsServiceService){}
 
   ngOnInit():void{
@@ -15,5 +19,25 @@ export class ProductsComponent implements OnInit{
       console.log(res);
       this.products = res;    
     })
+  }
+  
+  findByName(){
+      this.itemsService.getItems().subscribe((res: any) => {
+        this.products = res.filter((product: any) => {
+          if(product.name.toLowerCase().includes(this.buscador.toLowerCase())){
+            return product;
+          }
+        })
+      })
+  }
+
+  changeWrap(){
+    this.vista = true;
+    console.log(this.vista);
+  }
+  
+  changeList(){
+    console.log(this.vista);
+    this.vista = false;
   }
 }

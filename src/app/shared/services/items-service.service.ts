@@ -5,13 +5,17 @@ import { IProduct } from '../interfaces/productInterface';
   providedIn: 'root'
 })
 export class ItemsServiceService {
-
+  
   constructor(private http: HttpClient) { }
 
   getItems(){
-    return this.http.get("http://localhost:3000/products")
+    return this.http.get("http://localhost:3000/products");
   }
   postItems(product: IProduct){
-    return this.http.post("http://localhost:3000/products", product)
+    return this.http.post("http://localhost:3000/products", product).subscribe();
+  }
+  putItems(product: IProduct, id:number){
+    console.log(`http://localhost:3000/products/${id}`);
+    return this.http.put(`http://localhost:3000/products/${id}`, product).subscribe();
   }
 }

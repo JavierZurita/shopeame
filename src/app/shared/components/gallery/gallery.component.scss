@@ -1,14 +1,17 @@
 
-.galery{
+.galery--wrap{
     list-style: none;
-    background-color: white;
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-start;
-    width: 70%;
-    border-radius: 10px;
-    &--item{
+    gap: 20px;
+    &__item{
         max-width: 200px;
-        margin-right: 20px;
     }
 } 
+.galery--list{
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    gap: 20px;
+}

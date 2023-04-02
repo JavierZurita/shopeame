@@ -1,6 +1,15 @@
+<div class="{{vista}}">
+    <img src="{{item.image}}" alt="" class="image-product--{{vista}}">
+    <div class="card--text">
+        <b>{{item.name}}</b>
+        <p>{{item.description}}</p>
+        <b>${{item.price}}</b>
+        <div class="card--text__stars">
+            <app-stars [stars]="item.stars"></app-stars>
+            <p class="stars--text">{{item.stars}}</p>
+            <button routerLink="/gestion" (click)="saveData()">Editar</button>
+        </div>
 
-<img src="{{item.image}}" alt="" class="image-product">
-<p>{{item.name}}</p>
-<p>{{item.description}}</p>
-<p>${{item.price}}</p>
-<p>{{item.stars}}</p>
+    </div>
+
+</div>

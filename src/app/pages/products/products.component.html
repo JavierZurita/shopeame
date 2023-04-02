@@ -1,2 +1,20 @@
 
-<app-gallery [products]="products"></app-gallery>
+<div class="all">
+    <div class="body">
+        <div class="body__head">
+            <h2>Lista de productos ({{products.length}})</h2>
+
+            <div class="body__head--right">
+                <div class="body__head--right__btn">
+                    <button (click)="changeList()"><img src="../../../assets/images/vista1.png" alt=""></button>
+                    <button (click)="changeWrap()"><img src="../../../assets/images/vista2.png" alt=""></button>
+                </div>
+                <input placeholder="Buscador" type="text" (input)="findByName()" [(ngModel)]="buscador">
+            </div>
+        </div>
+        <app-gallery *ngIf="vista" [vista]="'wrap'" [products]="products"></app-gallery> 
+        <app-gallery *ngIf="!vista" [vista]="'list'" [products]="products"></app-gallery> 
+    </div>
+
+</div>
+

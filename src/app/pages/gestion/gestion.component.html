@@ -1,24 +1,31 @@
+<div class="all">
+    <div class="body">
+        <div class="body--left">
+            <h2 *ngIf="!modificar">Creación de productos</h2>
+            <h2 *ngIf="modificar">Edición de productos</h2>
 
-<h2>Creación/edición de productos</h2>
+            <p>Nombre del producto:</p>
+            <input placeholder="Por ej: Tiesto para planta" type="text" [(ngModel)]="product.name">
+            <p>Precio:</p>
+            <input placeholder="Por ej: 9.50" type="number" [(ngModel)]="product.price">
+            <p>Descripción:</p>
+            <input placeholder="Por ej: Lo más vendido este mes" type="text" [(ngModel)]="product.description">
+            <p>Ruta de la imagen:</p>
+            <input placeholder="Por ej: http://blabla.com/img.jpg" type="text" [(ngModel)]="product.image">
+            <p>Opiniones:</p>
+            <input placeholder="Por ej: 4.28" type="number" [(ngModel)]="product.stars" min="0" max="5">
+            <button rotuerLink="/products" *ngIf="!modificar" (click)="sendNewProduct()">Crear</button>
+            <button routerLink="/products" *ngIf="modificar" (click)="modify()">Editar</button>
 
-<p>Nombre del producto:</p>
-<input placeholder="Por ej: Tiesto para planta" type="text" [(ngModel)]="product.name">
-<p>Precio:</p>
-<input placeholder="Por ej: 9.50" type="number" [(ngModel)]="product.price">
-<p>Descripción:</p>
-<input placeholder="Por ej: Lo más vendido este mes" type="text" [(ngModel)]="product.description">
-<p>Ruta de la imagen:</p>
-<input placeholder="Por ej: http://blabla.com/img.jpg" type="text" [(ngModel)]="product.image">
-<p>Opiniones:</p>
-<input placeholder="Por ej: 4.28" type="number" [(ngModel)]="product.stars">
-
-<button (click)="sendNewProduct()">Guardar</button>
-
-<div>
-    <h5>Preview del producto</h5>
-    <img src="{{product.image}}">
-    <h4>{{product.name}}</h4>
-    <p>{{product.description}}</p>
-    <p>${{product.price}}</p>
-    <p>{{product.stars}}</p>
+            <!-- <app-input-title [text]="product.name"></app-input-title> -->
+        </div>
+        <div class="body--right">
+                <h5>Preview del producto</h5>
+                <img src="{{product.image}}">
+                <h4>{{product.name}}</h4>
+                <p>{{product.description}}</p>
+                <p>${{product.price}}</p>
+                <app-stars [stars]="product.stars"></app-stars>
+        </div>
+    </div>
 </div>

@@ -7,4 +7,8 @@ import { Component } from '@angular/core';
 })
 export class FooterComponent {
 
+  anno: number = 2020;
+   constructor(){
+    this.anno = new Date().getFullYear();
+  }
 }

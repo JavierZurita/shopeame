@@ -2,3 +2,60 @@
     margin: 0;
     padding: 0;
 }
+h2{
+    font-size: 20px;
+}
+.all{
+    display: flex;
+    justify-content: center;
+    background-color: rgba(1, 0, 0, 0.081);
+
+    .body{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        width: 60%;
+        margin: 5vw;
+        padding: 2vw;
+        background-color: white;
+        border-radius: 5px;
+        box-shadow: 1px 1px 10px black;
+        gap: 5vw;
+        &--left{
+            // border-right: 1px solid black;
+            display: flex;
+            flex-direction: column;
+            padding-right: 2vw;
+            padding-left: 2vw;
+            gap: 10px;
+            button{
+                width: 5vw;
+                max-width: 150px;
+                min-width: 60px;
+            }
+        }
+        &--right{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            max-width: 250px;
+            gap: 10px;
+            padding-top: 5vh;
+            padding-left: 2vw;
+            padding-right: 2vw;
+
+            img{
+                width: 15vw;
+                min-width: 100px;
+                max-width: 200px;
+            }
+        }
+        input{
+            height: 20px;
+            width: 15vw;
+            min-width: 150px;
+            max-width: 250px;
+        }
+    }
+}

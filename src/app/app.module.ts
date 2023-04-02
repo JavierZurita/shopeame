@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, Component } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http'
 import { AppRoutingModule } from './app-routing.module';
@@ -15,6 +15,8 @@ import { TextComponent } from './shared/components/text/text.component';
 import { FormsModule } from '@angular/forms';
 import { ParrafoComponent } from './shared/components/parrafo/parrafo.component';
 import { NavroutesComponent } from './shared/components/navroutes/navroutes.component';
+import { InputTitleComponent } from './shared/components/input-title/input-title.component';
+import { StarsComponent } from './shared/components/stars/stars.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +31,9 @@ import { NavroutesComponent } from './shared/components/navroutes/navroutes.comp
     TituloComponent,
     TextComponent,
     ParrafoComponent,
-    NavroutesComponent
+    NavroutesComponent,
+    InputTitleComponent,
+    StarsComponent
   ],
   imports: [
     BrowserModule,

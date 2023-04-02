@@ -1,4 +1,37 @@
-.image-product{
-    width: 150px;
-    height: 150px;
+.image-product--list{
+    width: 15vw;
+    height: 15vw;
+    max-width: 150px;
+    max-height: 150px;
+}
+.image-product--wrap{
+    width: 15vw;
+    height: 15vw;
+    max-width: 150px;
+    max-height: 150px;
+}
+.wrap{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    row-gap: 5px;
+}
+.list{
+    display: flex;
+    justify-content: flex-start;
+    gap: 5vw;
+}
+.card--text{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    &__stars{
+        display: flex;
+        justify-content: space-between;
+        color: grey;
+        button{
+            width: 3vw;
+            min-width: 45px;
+        }
+    }
 }

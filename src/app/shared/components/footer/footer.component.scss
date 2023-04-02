@@ -1,0 +1,28 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.footer{
+    background-color: #333333;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 180px;
+    gap: 40px;
+    padding-top: 50px;
+    &--top{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        &__list{
+        padding-top: 15px;
+        list-style: none;
+        &--item{
+            display: inline;
+            margin-left: 10px;
+        }
+    } 
+    }
+
+}

@@ -1,4 +1,6 @@
 import { Component, Input } from '@angular/core';
+import { IProduct } from '../../interfaces/productInterface';
+import { ProductServiceService } from '../../services/product.service.service';
 
 @Component({
   selector: 'app-card',
@@ -6,6 +8,13 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./card.component.scss']
 })
 export class CardComponent {
-  @Input() item: any;
-  
+  @Input() item!: IProduct;
+  @Input() vista: string = "";
+
+  constructor(private productService: ProductServiceService){}
+  saveData(){
+    this.productService.setProduct(this.item);
+    console.log(this.productService.getProduct());
+    this.productService.setModificar(true);
+  }
 }
