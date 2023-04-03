@@ -8,6 +8,7 @@
             <app-stars [stars]="item.stars"></app-stars>
             <p class="stars--text">{{item.stars}}</p>
             <button routerLink="/gestion" (click)="saveData()">Editar</button>
+            <button routerLink="/" (click)="delete()">Borrar</button>
         </div>
 
     </div>

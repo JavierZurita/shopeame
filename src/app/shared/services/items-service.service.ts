@@ -18,4 +18,8 @@ export class ItemsServiceService {
     console.log(`http://localhost:3000/products/${id}`);
     return this.http.put(`http://localhost:3000/products/${id}`, product).subscribe();
   }
+  deleteItems(id:number){
+    return this.http.delete(`http://localhost:3000/products/${id}`).subscribe();
+
+  }
 }

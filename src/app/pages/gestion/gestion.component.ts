@@ -14,11 +14,11 @@ export class GestionComponent implements OnInit {
   editProduct: IProduct = this.productService.getProduct();
   product: IProduct = {
     id: this.id,
-    name: 'Sofa',
-    price: 895.50,
-    description: 'Sofa muy cómodo para echarse la siesta o ver la tele',
+    name: 'Default',
+    price: 0.00,
+    description: 'Description default',
     stars: 2,
-    image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQZcNAB3-g0IHEpCfQT2Disc3vKPdIrWpBqI7njtLNGk_yC3P2GdfybYDAV9XAfnM0FAZU&usqp=CAU'
+    image: '../../../assets/images/default.png'
   }
 
   sendNewProduct(){
@@ -41,23 +41,14 @@ export class GestionComponent implements OnInit {
 
     if(this.productService.getModificar()){ 
       this.product = {
-        id: this.editProduct?.id,
-        name: this.editProduct?.name,
-        price: this.editProduct?.price,
-        description: this.editProduct?.description,
-        stars: this.editProduct?.stars,
-        image: this.editProduct?.image
+        id: this.editProduct.id,
+        name: this.editProduct.name,
+        price: this.editProduct.price,
+        description: this.editProduct.description,
+        stars: this.editProduct.stars,
+        image: this.editProduct.image
       } 
       this.productService.setModificar(false);
-    } else {
-        this.product = {
-          id: this.id,
-          name: 'Sofa',
-          price: 895.50,
-          description: 'Sofa muy cómodo para echarse la siesta o ver la tele',
-          stars: 2,
-          image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQZcNAB3-g0IHEpCfQT2Disc3vKPdIrWpBqI7njtLNGk_yC3P2GdfybYDAV9XAfnM0FAZU&usqp=CAU'
-        }
-      }    
+    }  
   }
 }

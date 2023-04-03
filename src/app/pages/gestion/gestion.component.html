@@ -16,7 +16,6 @@
             <input placeholder="Por ej: 4.28" type="number" [(ngModel)]="product.stars" min="0" max="5">
             <button rotuerLink="/products" *ngIf="!modificar" (click)="sendNewProduct()">Crear</button>
             <button routerLink="/products" *ngIf="modificar" (click)="modify()">Editar</button>
-
             <!-- <app-input-title [text]="product.name"></app-input-title> -->
         </div>
         <div class="body--right">
